@@ -4,17 +4,18 @@ def create(namesp, parent):
 
 
 def add(namesp, var):
-    nsp_var[namesp] = var
+    nsp_var[namesp] += [var]
 
 
 def get(namesp, var):
     if var in nsp_var[namesp]:
         return namesp
+    elif namesp in par_nsp:
+        parent = par_nsp[namesp]
+        while parent != 'None':
+            return get(parent, var)
     elif var not in nsp_var[namesp]:
-        if var in par_nsp[namesp]:
-            return namesp
-        else:
-            return
+        return
 
 
 n = int(input())
