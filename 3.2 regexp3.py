@@ -1,20 +1,21 @@
 import sys
 import re
 
-pattern = r"(cat.*?){2,}"
 
 for line in sys.stdin:
     line = line.rstrip()
-    if re.search(pattern, line):
+    if re.search(r"z(.{3}z)", line):
         print(line)
 
 '''Sample Input:
-catcat
-cat and cat
-catac
-cat
-ccaatt
+zabcz
+zzz
+zzxzz
+zz
+zxz
+zzxzxxz
 
 Sample Output:
-catcat
-cat and cat'''
+zabcz
+zzxzz
+'''

@@ -1,20 +1,16 @@
 import sys
 import re
 
-pattern = r"(cat.*?){2,}"
-
+s = r"\\"
 for line in sys.stdin:
     line = line.rstrip()
-    if re.search(pattern, line):
+    if re.findall(s, line):
         print(line)
 
 '''Sample Input:
-catcat
-cat and cat
-catac
-cat
-ccaatt
+\w denotes word character
+No slashes here
 
 Sample Output:
-catcat
-cat and cat'''
+\w denotes word character
+'''

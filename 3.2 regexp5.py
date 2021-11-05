@@ -1,7 +1,7 @@
 import sys
 import re
 
-pattern = r"(cat.*?){2,}"
+pattern = r"\b(.+)\1\b"
 
 for line in sys.stdin:
     line = line.rstrip()
@@ -9,12 +9,12 @@ for line in sys.stdin:
         print(line)
 
 '''Sample Input:
-catcat
-cat and cat
-catac
-cat
-ccaatt
+blabla is a tandem repetition
+123123 is good too
+go go
+aaa
 
 Sample Output:
-catcat
-cat and cat'''
+blabla is a tandem repetition
+123123 is good too
+'''

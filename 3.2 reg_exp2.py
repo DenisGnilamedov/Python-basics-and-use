@@ -1,7 +1,7 @@
 import sys
 import re
 
-pattern = r"(cat.*?){2,}"
+pattern = r"\bcat\b"
 
 for line in sys.stdin:
     line = line.rstrip()
@@ -9,12 +9,16 @@ for line in sys.stdin:
         print(line)
 
 '''Sample Input:
-catcat
-cat and cat
-catac
 cat
-ccaatt
+catapult and cat
+catcat
+concat
+Cat
+"cat"
+!cat?
 
 Sample Output:
-catcat
-cat and cat'''
+cat
+catapult and cat
+"cat"
+!cat?'''
