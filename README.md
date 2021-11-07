@@ -1,4 +1,4 @@
 # Python-basics-and-use
 https://stepik.org/course/512/syllabus
 
-requires: simplecrypt, sympy, requests
+requires: simplecrypt, sympy, requests, lxml, bs4
